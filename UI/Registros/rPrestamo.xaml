@@ -6,12 +6,17 @@
             <StackPanel Orientation="Horizontal">
                 <Label Content="PrestamoId:"/>
                 <TextBox x:Name="PrestamoIdTextBox" Width="100" Text="{Binding PrestamoId}"/>
-                <Button x:Name="BuscarButton" Content="Buscar" Click="SearchButton_Click"/>
+                <Button x:Name="BuscarButton" Click="SearchButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Stretch = "Fill" Source="\Icons\Zoom.png"/>
+                        <TextBlock Text="Buscar" />
+                    </StackPanel>
+                </Button>
             </StackPanel>
             
             <!--Fecha-->
             <StackPanel Orientation="Horizontal">
-                <Label Content="Fecha" Foreground="#000000" FontSize="20" Margin="20,0" FontStyle="Normal"/>
+                <Label Content="Fecha" Foreground="#000000" FontSize="20" FontStyle="Normal"/>
                 <DatePicker x:Name="Fecha_DatePicker" Width="160" Height="25" Text="{Binding Fecha}"/>
             </StackPanel>
             
@@ -35,19 +40,19 @@
             <StackPanel Orientation="Horizontal" Margin="30,10">
                 <Button x:Name="NewButton" Margin="10,0" Width="90" Height="28" Click="NewButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="Icons\nuevo.png"/>
+                        <Image Source="\Icons\nuevo.png"/>
                         <Label Content="Nuevo"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="SaveButton" Margin="10,0" Width="90" Height="28" Click="SaveButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="Icons\disquete.png"/>
+                        <Image Source="\Icons\disquete.png"/>
                         <Label Content="Guardar"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="DeleteButton" Margin="10,0" Width="90" Height="28" Click="DeleteButton_Click">
                     <StackPanel Orientation="Horizontal">
-                        <Image Source="Icons\borrar.png"/>
+                        <Image Source="\Icons\borrar.png"/>
                         <Label Content="Eliminar"/>
                     </StackPanel>
                 </Button>
