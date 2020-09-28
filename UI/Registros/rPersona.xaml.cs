@@ -59,10 +59,10 @@ namespace Prestamos.UI.Registros
 
         private bool Validar(){
             bool esValido = true;
-            if(PersonaIdTextBox.Text.Length == 0 && NombresTextBox.Text.Length == 0)
+            if(NombresTextBox.Text.Length == 0)
             {
                 esValido = false;
-                MessageBox.Show("Error, Intentelo de nuevo", "Error",MessageBoxButton.OKCancel);
+                MessageBox.Show("Le falta incluir el nombre", "Error",MessageBoxButton.OKCancel);
 
                 
             }

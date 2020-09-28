@@ -73,3 +73,7 @@ C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\prestamos.csproj.C
 C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\prestamos.dll
 C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\prestamos.pdb
 C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\prestamos.genruntimeconfig.cache
+C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\UI\Consultas\cPersona.g.cs
+C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\UI\Consultas\cPrestamo.g.cs
+C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\UI\Consultas\cPersona.baml
+C:\Users\David\source\repos\Prestamos\obj\Debug\netcoreapp3.1\UI\Consultas\cPrestamo.baml

@@ -60,12 +60,17 @@ namespace Prestamos.UI.Registros
 
         private bool Validar(){
             bool esValido = true;
-            if(PrestamoIdTextBox.Text.Length == 0 && MontoTextBox.Text.Length == 0 && ConceptoTextBox.Text.Length == 0 && PersonaIdTextBox.Text.Length == 0 /*&& PersonaBLL.Exist(Convert.ToInt32(PersonaIdTextBox.Text)) == false*/) 
+            
+            if(MontoTextBox.Text.Length == 1 && ConceptoTextBox.Text.Length == 0 && PersonaIdTextBox.Text.Length == 1) 
             {
                 esValido = false;
-                MessageBox.Show("Error, Intentelo de nuevo", "Error",MessageBoxButton.OKCancel);
+                MessageBox.Show("Todos los campos deben estar completos. \nPor favor complete todos los campos", "Error",MessageBoxButton.OKCancel);
 
                 
+            }
+            else if(!PersonaBLL.Exist(Convert.ToInt32(PersonaIdTextBox.Text))){
+                esValido = false;
+                MessageBox.Show("El ID de la persona no existe", "Error",MessageBoxButton.OKCancel);
             }
             return esValido;
         }

@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prestamos.UI.Consultas;
 using Prestamos.UI.Registros;
-
 namespace prestamos
 {
     /// <summary>
@@ -36,6 +36,18 @@ namespace prestamos
         {
             rPrestamo rPrestam = new rPrestamo();
             rPrestam.Show();
+        }
+
+        public void cPersona_Click(object render, RoutedEventArgs e)
+        {
+            cPersona cPerson = new cPersona();
+            cPerson.Show();
+        }
+
+        public void cPrestamo_Click(object render, RoutedEventArgs e)
+        {
+            cPrestamo cPrestam = new cPrestamo();
+            cPrestam.Show();
         }
     }
 }

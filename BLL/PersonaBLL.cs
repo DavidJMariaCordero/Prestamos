@@ -152,5 +152,25 @@ namespace Prestamos.BLL
             else
                 return false;
         }
+
+        public static List<Persona> GetList(Expression<Func<Persona, bool>> criterio)
+        {
+            List<Persona> lista = new List<Persona>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                //obtener la lista y filtrarla según el criterio recibido por parametro.
+                lista = contexto.Persona.Where(criterio).AsNoTracking().ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
     }
 }

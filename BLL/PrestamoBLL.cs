@@ -122,6 +122,26 @@ namespace Prestamos.BLL
             }
             return encontrado;
         }
+
+        public static List<Prestamo> GetList(Expression<Func<Prestamo, bool>> criterio)
+        {
+            List<Prestamo> lista = new List<Prestamo>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                //obtener la lista y filtrarla según el criterio recibido por parametro Where(criterio)..
+                lista = contexto.Prestamo.Where(criterio).AsNoTracking().ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
         
     }
 }
