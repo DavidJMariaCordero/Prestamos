@@ -3,7 +3,6 @@ using System.Windows;
 using Prestamos.DAL;
 using Prestamos.Entidades;
 using Prestamos.BLL;
-using Prestamos.UI;
 
 namespace Prestamos.UI.Registros
 {
@@ -18,8 +17,10 @@ namespace Prestamos.UI.Registros
         public rPrestamo()
         {
             InitializeComponent();
-            prestamo = new Prestamo();
-            this.DataContext = prestamo;
+            PersonaComboBox.ItemsSource = PersonaBLL.GetList();
+            PersonaComboBox.SelectedValuePath = "PersonaId";
+            PersonaComboBox.DisplayMemberPath = "PersonaId";
+            Limpiar();
         }
 
         public void SaveButton_Click(object render, RoutedEventArgs e)
@@ -37,6 +38,7 @@ namespace Prestamos.UI.Registros
 
         public void Limpiar(){
             this.prestamo = new Prestamo();
+            this.prestamo.Fecha = DateTime.Now;
             this.DataContext = prestamo;
         }
 
@@ -58,17 +60,19 @@ namespace Prestamos.UI.Registros
             this.DataContext = this.prestamo;
         }
 
+        
+
         private bool Validar(){
             bool esValido = true;
             
-            if(MontoTextBox.Text.Length == 1 && ConceptoTextBox.Text.Length == 0 && PersonaIdTextBox.Text.Length == 1) 
+            if(MontoTextBox.Text.Length == 1 && ConceptoTextBox.Text.Length == 0 && PrestamoIdTextBox.Text.Length == 1) 
             {
                 esValido = false;
                 MessageBox.Show("Todos los campos deben estar completos. \nPor favor complete todos los campos", "Error",MessageBoxButton.OKCancel);
 
                 
             }
-            else if(!PersonaBLL.Exist(Convert.ToInt32(PersonaIdTextBox.Text))){
+            else if(!PersonaBLL.Exist(Convert.ToInt32(PersonaComboBox.SelectedValue))){
                 esValido = false;
                 MessageBox.Show("El ID de la persona no existe", "Error",MessageBoxButton.OKCancel);
             }
@@ -92,3 +96,6 @@ namespace Prestamos.UI.Registros
 
     }
 }
+
+
+

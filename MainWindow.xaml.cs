@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Prestamos.UI.Consultas;
 using Prestamos.UI.Registros;
+
 namespace prestamos
 {
     /// <summary>
@@ -48,6 +49,12 @@ namespace prestamos
         {
             cPrestamo cPrestam = new cPrestamo();
             cPrestam.Show();
+        }
+
+        public void rMoras_Click(object render, RoutedEventArgs e)
+        {
+            rMora rMoras = new rMora();
+            rMoras.Show();
         }
     }
 }

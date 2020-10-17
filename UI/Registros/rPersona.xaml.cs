@@ -17,8 +17,7 @@ namespace Prestamos.UI.Registros
         public rPersona()
         {
             InitializeComponent();
-            person = new Persona();
-            this.DataContext = person;
+            Limpiar();
         }
 
         public void SaveButton_Click(object render, RoutedEventArgs e)
