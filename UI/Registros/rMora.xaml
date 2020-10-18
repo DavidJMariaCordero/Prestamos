@@ -51,8 +51,7 @@
             <Label Content="Total" Width="119" Margin="300,0,0,0"/>
             <TextBox x:Name="TotalTextBox"  TextWrapping="Wrap" Width="115" Margin="300,0,0,0" Text = "{Binding Total}"/>
             <StackPanel Height="27" Orientation="Horizontal" Width="353" Margin="0,30,0,0">
-                <Button x:Name="NuevoBoton" Margin="10,0,20,0" >
-                    <!-- Click = "NuevoBoton_Click"  Click = "BorrarBoton_Click"-->
+                <Button x:Name="NuevoBoton" Margin="10,0,20,0" Click = "NuevoBoton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="\Icons\nuevo-documento.png"/>
                         <Label Content="Nuevo"/>
@@ -66,7 +65,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="BorrarBoton" Width="100" Margin="20,0,0,0">
+                <Button x:Name="EliminarBoton" Width="100" Margin="20,0,0,0" Click = "EliminarBoton_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="\Icons\borrar.png"/>
                         <Label Content="Eliminar"/>

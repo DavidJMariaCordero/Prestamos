@@ -124,5 +124,10 @@ namespace Prestamos.UI.Registros
                 this.DataContext = moras;
             }
         }
+
+        private void NuevoBoton_Click(object sender, RoutedEventArgs e)
+        {
+            Limpiar();
+        }
     }
 }
