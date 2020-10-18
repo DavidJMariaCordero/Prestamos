@@ -97,8 +97,8 @@ namespace Prestamos.BLL
 
             try
             {
-                mora = contexto.Moras.Include(x => x.Detalle)
-                    .Where(x => x.MoraId == id)
+                mora = contexto.Moras.Include(m => m.Detalle)
+                    .Where(m => m.MoraId == id)
                     .SingleOrDefault();
             }
             catch (Exception)

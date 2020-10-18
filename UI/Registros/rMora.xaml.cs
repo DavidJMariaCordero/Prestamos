@@ -31,7 +31,7 @@ namespace Prestamos.UI.Registros
         }
         private void BuscarBoton_Click(object sender, RoutedEventArgs e)
         {
-            Moras encontrado = MorasBLL.Buscar(this.moras.MoraId);
+            Moras encontrado = MorasBLL.Buscar(Convert.ToInt32(IdTextBox.Text));
 
             if (encontrado != null)
             {
@@ -42,8 +42,7 @@ namespace Prestamos.UI.Registros
             else
             {
                 Limpiar();
-                MessageBox.Show("Mora no existe en la base de datos", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("La Mora no existe", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
